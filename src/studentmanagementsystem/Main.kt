@@ -1,4 +1,4 @@
-package student_management_system
+package studentmanagementsystem
 
 import java.time.LocalDate
 

@@ -1,6 +1,6 @@
-package e_commerce.data
+package ecommerce.data
 
-import e_commerce.Order
+import ecommerce.Order
 import java.time.LocalDate
 
 val chinmayOrderHistory = Order(orderId = 123, customer =  chinmay, date = LocalDate.now())

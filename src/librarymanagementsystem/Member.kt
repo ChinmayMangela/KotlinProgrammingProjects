@@ -1,4 +1,4 @@
-package LibraryManagementSystem
+package librarymanagementsystem
 
 class Member(
     private val memberId: String,

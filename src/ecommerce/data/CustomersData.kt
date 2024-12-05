@@ -1,6 +1,6 @@
-package e_commerce.data
+package ecommerce.data
 
-import e_commerce.Customer
+import ecommerce.Customer
 
 
 val monty: Customer = Customer(

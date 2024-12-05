@@ -1,7 +1,7 @@
-package e_commerce.data
+package ecommerce.data
 
-import e_commerce.Product
-import e_commerce.ProductCategory
+import ecommerce.Product
+import ecommerce.ProductCategory
 
 val products = listOf(
     Product(

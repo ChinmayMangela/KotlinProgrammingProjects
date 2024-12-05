@@ -1,7 +1,6 @@
-package e_commerce
+package ecommerce
 
-import e_commerce.data.*
-import java.time.Year
+import ecommerce.data.*
 
 fun main() {
     val customers = listOf(chinmay, monty, clarion)

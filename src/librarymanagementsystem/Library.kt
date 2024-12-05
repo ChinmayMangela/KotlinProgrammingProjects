@@ -1,4 +1,4 @@
-package LibraryManagementSystem
+package librarymanagementsystem
 
 class Library(
     private var name: String,

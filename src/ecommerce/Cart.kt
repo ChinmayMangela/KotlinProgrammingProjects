@@ -1,6 +1,4 @@
-package e_commerce
-
-import e_commerce.data.products
+package ecommerce
 
 class Cart(
     private var totalPrice: Double = 0.0,

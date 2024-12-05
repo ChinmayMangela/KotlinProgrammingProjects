@@ -1,4 +1,4 @@
-package e_commerce
+package ecommerce
 
 import java.time.Year
 

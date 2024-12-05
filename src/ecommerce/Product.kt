@@ -1,4 +1,4 @@
-package e_commerce
+package ecommerce
 
 class Product(
     private val productId: Int,

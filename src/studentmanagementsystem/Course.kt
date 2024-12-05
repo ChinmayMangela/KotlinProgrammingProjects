@@ -1,4 +1,4 @@
-package student_management_system
+package studentmanagementsystem
 
 class Course(
     private val courseId: String,

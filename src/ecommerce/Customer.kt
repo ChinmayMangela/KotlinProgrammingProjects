@@ -1,4 +1,4 @@
-package e_commerce
+package ecommerce
 
 class Customer(
     private val id: String,

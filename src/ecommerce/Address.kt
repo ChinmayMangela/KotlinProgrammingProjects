@@ -1,4 +1,4 @@
-package e_commerce
+package ecommerce
 
 class Address(
     private val streetName: String,

@@ -1,6 +1,6 @@
-package e_commerce.data
+package ecommerce.data
 
-import e_commerce.Cart
+import ecommerce.Cart
 
 val montyCart: Cart = Cart()
 val clarionCart: Cart = Cart()

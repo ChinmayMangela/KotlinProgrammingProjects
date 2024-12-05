@@ -1,4 +1,4 @@
-package e_commerce
+package ecommerce
 enum class ProductCategory {
     Electronics,
     Clothing,

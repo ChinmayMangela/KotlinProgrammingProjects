@@ -1,6 +1,6 @@
-package e_commerce.data
+package ecommerce.data
 
-import e_commerce.Address
+import ecommerce.Address
 
 val losAngeles = Address(streetName = "123 Main St", houseNumber = "A", city = "Los Angeles", state = "CA", postalCode = 90001, country = "USA")
 val newYork = Address(streetName = "456 Oak Rd", houseNumber = null, city = "New York", state = "NY", postalCode = 10001, country = "USA")

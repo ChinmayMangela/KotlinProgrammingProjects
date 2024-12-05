@@ -1,6 +1,6 @@
-package e_commerce.data
+package ecommerce.data
 
-import e_commerce.Brand
+import ecommerce.Brand
 import java.time.Year
 
 val samsung = Brand(name = "Samsung", countryOfOrigin = "South Korea", foundingYear = Year.of(1938))
