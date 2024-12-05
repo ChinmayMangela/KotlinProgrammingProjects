@@ -11,7 +11,12 @@ class Product(
     private val shippingWeight: Double,
     private val rating: Int
 ) {
-    
+
+    init {
+        if (rating !in 1..5) {
+            throw IllegalArgumentException("Invalid rating: $rating. It should be between 1 and 5.")
+        }
+    }
     companion object {
         val categoryPriceLimits: Map<ProductCategory, Double> = mapOf(
             ProductCategory.Electronics to 10000.0,
@@ -69,6 +74,4 @@ class Product(
     }
     
     fun isAvailable(): Boolean = quantity > 0
-    
-    
 }
