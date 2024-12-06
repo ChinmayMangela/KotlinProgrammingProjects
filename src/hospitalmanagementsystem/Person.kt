@@ -15,13 +15,13 @@ class Person(
     init {
         val personValidator = PersonValidator()
         require(personValidator.isValidName(name)){
-            "Name should be valid"
+            "Invalid name: Name must be at least 1 character and only contain letters and spaces"
         }
         require(personValidator.isValidDateOfBirth(dateOfBirth)) {
-            "Date of birth should be valid"
+            "Invalid date of birth: must between 18 to 80 years old"
         }
         require(personValidator.isValidContactNumber(contactNumber)) {
-            "Contact Number should be valid"
+            "Invalid contact number: Must be a 10-digit number"
         }
     }
 
