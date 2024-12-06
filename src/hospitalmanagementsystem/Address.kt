@@ -37,4 +37,9 @@ class Address(
     fun setCountry(newCountry: String) {
         country = newCountry
     }
+
+    fun getFormattedAddress(): String {
+        val houseNumberLine = if(houseNumber.isNullOrEmpty()) "" else "House number $houseNumber, "
+        return "$houseNumberLine$streetName, $city, $state, $postalCode, $country"
+    }
 }
