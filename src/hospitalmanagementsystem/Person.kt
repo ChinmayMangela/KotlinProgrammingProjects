@@ -3,7 +3,7 @@ package hospitalmanagementsystem
 import java.time.LocalDate
 import java.util.*
 
-class Person(
+open class Person(
     private val personId: String = UUID.randomUUID().toString(),
     private var name: String,
     private val dateOfBirth: LocalDate,
@@ -11,33 +11,32 @@ class Person(
     private var contactNumber: String,
 ) {
 
-
     init {
         val personValidator = PersonValidator()
-        require(personValidator.isValidName(name)){
-            "Invalid name: Name must be at least 1 character and only contain letters and spaces"
+        if (!personValidator.isValidName(name)) {
+            throw IllegalArgumentException("\"Invalid name: Name must be at least 1 character and only contain letters and spaces")
         }
-        require(personValidator.isValidDateOfBirth(dateOfBirth)) {
-            "Invalid date of birth: must between 18 to 80 years old"
+        if (!personValidator.isValidDateOfBirth(dateOfBirth)) {
+            throw IllegalArgumentException("Invalid date of birth: must between 18 to 80 years old")
         }
-        require(personValidator.isValidContactNumber(contactNumber)) {
-            "Invalid contact number: Must be a 10-digit number"
+        if (!personValidator.isValidContactNumber(contactNumber)) {
+            throw IllegalArgumentException("Invalid contact number: Must be a 10-digit number")
         }
     }
 
-    fun getPersonId(): String = personId
-    fun getName(): String = name
-    fun setName(newName: String) {
+    open fun getPersonId(): String = personId
+    open fun getName(): String = name
+    open fun setName(newName: String) {
         name = newName
     }
 
-    fun getDateOfBirth(): LocalDate = dateOfBirth
-    fun getAddress(): String = address.getFormattedAddress()
-    fun setAddress(newAddress: Address) {
+    open fun getDateOfBirth(): LocalDate = dateOfBirth
+    open fun getAddress(): String = address.getFormattedAddress()
+    open fun setAddress(newAddress: Address) {
         address = newAddress
     }
 
-    fun getContactNumber(): String = contactNumber
+    open fun getContactNumber(): String = contactNumber
     fun setContactNumber(newContactNumber: String) {
         contactNumber = newContactNumber
     }
