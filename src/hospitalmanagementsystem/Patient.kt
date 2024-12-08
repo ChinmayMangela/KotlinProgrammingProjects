@@ -1,6 +1,7 @@
 package hospitalmanagementsystem
 
 import hospitalmanagementsystem.appointment.Appointment
+import hospitalmanagementsystem.appointment.AppointmentManager
 import hospitalmanagementsystem.medicalrecord.MedicalRecord
 import java.time.LocalDate
 import java.util.UUID
@@ -72,8 +73,12 @@ class Patient(
         }
     }
 
+    private val appointmentManager = AppointmentManager()
     fun bookAppointment(appointment: Appointment) {
-
+        if(appointmentManager.bookAppointment(appointment)) {
+            appointments.add(appointment)
+            println("Your appointment with Dr. ${appointment.getDoctor().getName()} is confirmed.")
+        }
     }
 
 

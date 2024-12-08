@@ -23,7 +23,7 @@ class Appointment(
     fun getAppointmentStatus(): AppointmentStatus = status
 
     fun getAppointmentDetails(): String {
-        return "Date: ${getFormattedDate()}\nTime: ${getFormattedTime()}\nDoctor: ${doctor.getProfileSummary()}\nPatient: ${patient}"
+        return "Date: ${getFormattedDate()}\nTime: ${getFormattedTime()}\nDoctor: ${doctor.getProfileSummary()}\nPatient: ${patient.getName()}"
     }
 
     private fun getFormattedDate(): String {
