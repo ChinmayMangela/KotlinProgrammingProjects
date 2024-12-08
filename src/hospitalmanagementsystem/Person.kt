@@ -1,5 +1,6 @@
 package hospitalmanagementsystem
 
+import hospitalmanagementsystem.shared.Shared
 import java.time.LocalDate
 import java.util.*
 
@@ -42,11 +43,8 @@ open class Person(
     }
 
     fun printDetails() {
-        println("Name: $name\nDOB: ${getFormattedDateOfBirth()}\nAddress: ${getAddress()}\nContact: $contactNumber")
+        println("Name: $name\nDOB: ${Shared.getFormattedDate(dateOfBirth)}\nAddress: ${getAddress()}\nContact: $contactNumber")
     }
 
-    private fun getFormattedDateOfBirth(): String {
-        return "${dateOfBirth.year}/${dateOfBirth.month}/${dateOfBirth.dayOfMonth}"
-    }
 
 }

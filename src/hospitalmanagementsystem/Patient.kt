@@ -1,5 +1,6 @@
 package hospitalmanagementsystem
 
+import hospitalmanagementsystem.medicalrecord.MedicalRecord
 import java.time.LocalDate
 import java.util.UUID
 
@@ -10,8 +11,8 @@ class Patient(
     private var address: Address,
     private var contactNumber: String,
     private val patientId: String = UUID.randomUUID().toString(),
-    private val medicalRecordNumber: String,
     private val emergencyContact: String,
+    private val medicalRecords: MutableList<MedicalRecord>
 ): Person(
     personId = personId,
     name = name,
@@ -41,7 +42,26 @@ class Patient(
     override fun setName(newName: String) = super.setName(newName)
     fun getPatientId(): String = patientId
 
+    fun addMedicalRecord(medicalRecord: MedicalRecord) {
+        if(!medicalRecords.contains(medicalRecord)) {
+            println("You have already added this record")
+        } else {
+            medicalRecords.add(medicalRecord)
+        }
+    }
 
+    fun getMedicalHistory() {
+        if(medicalRecords.isEmpty()) {
+            println("Your medical history is not exists")
+        } else {
+            for(medicalRecord in medicalRecords) {
+                println(medicalRecord)
+            }
+        }
+    }
 
+    fun updateMedicalRecord(newRecord: MedicalRecord) {
+        println("Medical records are updated")
+    }
 
 }
