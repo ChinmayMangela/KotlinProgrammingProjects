@@ -1,8 +1,8 @@
 package hospitalmanagementsystem.doctor
 
 import hospitalmanagementsystem.*
+import hospitalmanagementsystem.appointment.AppointmentManager
 import java.time.LocalDate
-import java.time.LocalTime
 import java.util.*
 
 class Doctor(
@@ -70,9 +70,25 @@ class Doctor(
         return "Doctor ID: $doctorId\n" + "Name: $name\n" + "Specialization: $specialization\n" + "Experience: $experience years\n" + "Qualification: $qualification\n" + "Availability: ${if (availability) "Available" else "Not Available"}\n" + "Ratings: $ratings"
     }
 
-    fun bookAppointment(patient: Patient, date: LocalDate, time: LocalTime) {
+    fun getTodayAppointments() {
+        val appointmentManager = AppointmentManager()
+        val allAppointments = appointmentManager.geAllAppointments()
+        val today = LocalDate.now()
+
+
+        val todayAppointments =  allAppointments.filter { appointment ->
+            appointment.getDate().isEqual(today)
+        }
+
+        if(todayAppointments.isEmpty()) {
+            println("There are no appointment scheduled for today")
+            return
+        }
+
+        for(appointment in todayAppointments) {
+            println(appointment.getAppointmentDetails())
+        }
 
     }
-
 
 }

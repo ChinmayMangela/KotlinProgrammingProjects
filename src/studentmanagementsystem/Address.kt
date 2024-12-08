@@ -1,5 +1,4 @@
 package studentmanagementsystem
-
 class Address(
     private val streetName: String,
     private val houseNumber: String?,

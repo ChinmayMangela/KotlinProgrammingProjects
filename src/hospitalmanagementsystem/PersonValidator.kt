@@ -9,11 +9,17 @@ class PersonValidator {
 
     fun isValidDateOfBirth(dateOfBirth: LocalDate): Boolean {
         val now = LocalDate.now()
-        val minimumAge: Long = 18
-        val minimumBirth = LocalDate.now().minusYears(minimumAge)
-        val maximumAge: Long = 80
-        val maximumBirth = LocalDate.now().minusYears(maximumAge)
-        return dateOfBirth.isBefore(now) && (dateOfBirth.isAfter(minimumBirth) && dateOfBirth.isBefore(maximumBirth))
+        val minimumAge = 18
+        val maximumAge = 80
+
+        // Ensure the date of birth is not in the future
+        if (dateOfBirth.isAfter(now)) return false
+
+        // Calculate the age
+        val age = now.year - dateOfBirth.year - (if (now.dayOfYear < dateOfBirth.dayOfYear) 1 else 0)
+
+        // Validate age between 18 and 80
+        return age in minimumAge..maximumAge
     }
 
     fun isValidContactNumber(contactNumber: String): Boolean {
