@@ -56,11 +56,29 @@ class MedicalRecord(
         }
     }
 
+    fun removeDiagnosis(diagnosis: Diagnosis) {
+        if(!diagnoses.contains(diagnosis)) {
+            print("It wont contain this diagnosis")
+        } else {
+            diagnoses.remove(diagnosis)
+            println("Diagnosis is removed successfully")
+        }
+    }
+
     fun addTreatment(treatment: Treatment) {
         if(!treatments.contains(treatment)) {
             treatments.add(treatment)
         } else {
             println("This treatment is already exists")
+        }
+    }
+
+    fun removeTreatment(treatment: Treatment) {
+        if(!treatments.contains(treatment)) {
+            println("This treatment doesn't exist")
+        } else {
+            treatments.remove(treatment)
+            println("Treatment is removed successfully")
         }
     }
 
@@ -72,6 +90,15 @@ class MedicalRecord(
         }
     }
 
+    fun removeAllergy(allergy: Allergy) {
+        if(!allergies.contains(allergy)) {
+            println("This allergy doesn't exist")
+        } else {
+            allergies.remove(allergy)
+            println("Allergy is removed successfully")
+        }
+    }
+
     fun addMedication(medication: Medication) {
         if(!medications.contains(medication)) {
             medications.add(medication)
@@ -80,11 +107,28 @@ class MedicalRecord(
         }
     }
 
+    fun removeMedication(medication: Medication) {
+        if(!medications.contains(medication)) {
+            println("This medication doesn't exists")
+        } else {
+            println("Medication is removed successfully")
+        }
+    }
+
     fun addImmunization(immunization: Immunization) {
         if(!immunizations.contains(immunization)) {
             immunizations.add(immunization)
         } else {
             println("This dosage already exists")
+        }
+    }
+
+    fun removeImmunization(immunization: Immunization) {
+        if(!immunizations.contains(immunization)) {
+            println("This Dosage is not exists")
+        } else {
+            immunizations.remove(immunization)
+            println("Dosage is removed successfully")
         }
     }
 

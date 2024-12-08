@@ -1,5 +1,6 @@
 package hospitalmanagementsystem
 
+import hospitalmanagementsystem.appointment.Appointment
 import hospitalmanagementsystem.medicalrecord.MedicalRecord
 import java.time.LocalDate
 import java.util.UUID
@@ -12,7 +13,8 @@ class Patient(
     private var contactNumber: String,
     private val patientId: String = UUID.randomUUID().toString(),
     private val emergencyContact: String,
-    private val medicalRecords: MutableList<MedicalRecord>
+    private val medicalRecords: MutableList<MedicalRecord>,
+    private val appointments: MutableList<Appointment>,
 ): Person(
     personId = personId,
     name = name,
@@ -55,13 +57,25 @@ class Patient(
             println("Your medical history is not exists")
         } else {
             for(medicalRecord in medicalRecords) {
-                println(medicalRecord)
+                println(medicalRecord.getDetails())
             }
         }
     }
 
-    fun updateMedicalRecord(newRecord: MedicalRecord) {
-        println("Medical records are updated")
+    fun getAppointments() {
+        if(appointments.isEmpty()) {
+            println("You have no scheduled appointments.")
+        } else {
+            for(appointment in appointments) {
+                println(appointment.getAppointmentDetails())
+            }
+        }
     }
+
+    fun bookAppointment(appointment: Appointment) {
+
+    }
+
+
 
 }
