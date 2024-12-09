@@ -4,11 +4,11 @@ class AppointmentManager {
     private val allAppointments: MutableList<Appointment> = mutableListOf()
 
     private fun isAppointmentConflict(appointment: Appointment): Boolean {
-        return allAppointments.any {
-            it.getDoctor() == appointment.getDoctor() &&
-                    it.getDate() == appointment.getDate() &&
-                    it.getStartTime() == appointment.getStartTime() &&
-                    it.getEndTime() == appointment.getEndTime()
+        return allAppointments.any { existingAppointment ->
+            existingAppointment.getDoctor() == appointment.getDoctor() &&
+                    existingAppointment.getDate() == appointment.getDate() &&
+                    existingAppointment.getStartTime() == appointment.getStartTime() &&
+                    existingAppointment.getEndTime() == appointment.getEndTime()
         }
     }
 
@@ -18,11 +18,6 @@ class AppointmentManager {
             return false
         } else {
             allAppointments.add(appointment)
-            println(
-                "Appointment successfully booked with Dr. ${
-                    appointment.getDoctor().getName()
-                } at ${appointment.getStartTime()}."
-            )
             return true
         }
     }

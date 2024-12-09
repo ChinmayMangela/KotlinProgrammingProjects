@@ -71,7 +71,6 @@ class Doctor(
     }
 
     fun getTodayAppointments() {
-        val appointmentManager = AppointmentManager()
         val allAppointments = appointmentManager.geAllAppointments()
         val today = LocalDate.now()
 

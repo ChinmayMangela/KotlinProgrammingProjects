@@ -73,11 +73,14 @@ class Patient(
         }
     }
 
-    private val appointmentManager = AppointmentManager()
     fun bookAppointment(appointment: Appointment) {
-        if(appointmentManager.bookAppointment(appointment)) {
+        println("Attempting to book appointment with Dr. ${appointment.getDoctor().getName()}")
+        if (appointmentManager.bookAppointment(appointment)) {
             appointments.add(appointment)
-            println("Your appointment with Dr. ${appointment.getDoctor().getName()} is confirmed.")
+            println("Appointment successfully booked with Dr. ${appointment.getDoctor().getName()} on ${appointment.getDate()} at ${appointment.getStartTime()}.")
+        } else {
+//            println("Conflict: The doctor already has an appointment at this time.")
+
         }
     }
 
